@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 22:54:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/19 03:57:15 by vlothlinux       ###   ########.fr       */
+/*   Created: 2022/01/19 03:14:46 by vlothlinux        #+#    #+#             */
+/*   Updated: 2022/01/19 03:58:00 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../include/push_swap.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-typedef struct ps_datas
+void	init_stack(char **av, int ac, t_datas *datas)
 {
-	int	nb_total;
-	int	*stacka;
-	int	*stackb;
-}	t_datas;
+	int	i;
+	int	n;
 
-typedef struct ps_all
-{
-	t_datas	datas[1];
-}	t_all;
-
-int		ft_atoi(const char *nptr);
-void	init_stack(char **av, int ac, t_datas *datas);
-
-#endif
+	i = 1;
+	n = 0;
+	datas->nb_total = ac - 1;
+	datas->stacka = malloc(sizeof (int) * datas->nb_total);
+	datas->stackb = malloc(sizeof (int) * datas->nb_total);
+	while (av[i])
+	{
+		datas->stacka[n] = ft_atoi(av[i]);
+		i++;
+		n++;
+	}
+	datas->stacka[datas->nb_total] = '\0';
+}
