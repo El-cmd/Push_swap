@@ -6,7 +6,7 @@
 /*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 03:28:53 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/19 03:30:03 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/19 04:21:24 by vlothlinux       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,25 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (n * j);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	unsigned int	size;
+
+	size = 0;
+	while (s[size])
+		size++;
+	return (size);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t	i;
+
+	if (s)
+	{
+		i = ft_strlen(s);
+		write(fd, s, i);
+	}
 }
