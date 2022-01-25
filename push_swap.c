@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 21:36:42 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/19 04:20:10 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/25 16:03:06 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int ac, char **av)
 		printf("%d\n", all.datas->stacka[i]);
 		i++;
 	}
-	ra(all.datas->stacka);
+	rra(all.datas->stacka);
 	i = 0;
 	while (all.datas->stacka[i])
 	{

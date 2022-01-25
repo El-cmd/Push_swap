@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlothlinux <vlothlinux@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:54:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/19 04:37:11 by vlothlinux       ###   ########.fr       */
+/*   Updated: 2022/01/25 16:15:15 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,17 @@ typedef struct ps_all
 
 int		ft_atoi(const char *nptr);
 void	init_stack(char **av, int ac, t_datas *datas);
+size_t	ft_strlen(const char *s);
+size_t	ft_strlen_int(int *tab);
 void	ft_putstr_fd(char *s, int fd);
 void	sa(int *tab);
 void	sb(int *tab);
 void	ss(int *taba, int *tabb);
 void	ra(int *taba);
 void	rb(int *tabb);
+void	rr(int *taba, int *tabb);
+void	rra(int *taba);
+void	rrb(int *tabb);
+void	rrr(int *taba, int *tabb);
 
 #endif
