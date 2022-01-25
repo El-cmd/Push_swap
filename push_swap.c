@@ -24,7 +24,7 @@ int	main(int ac, char **av)
 		printf("%d\n", all.datas->stacka[i]);
 		i++;
 	}
-	sa(all.datas->stacka);
+	ra(all.datas->stacka);
 	i = 0;
 	while (all.datas->stacka[i])
 	{

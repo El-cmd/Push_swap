@@ -35,5 +35,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	sa(int *tab);
 void	sb(int *tab);
 void	ss(int *taba, int *tabb);
+void	ra(int *taba);
+void	rb(int *tabb);
 
 #endif

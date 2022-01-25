@@ -44,3 +44,41 @@ void	ss(int *taba, int *tabb)
 	tabb[1] = swap;
 	ft_putstr_fd("ss\n", 1);
 }
+
+void	ra(int *taba)
+{
+	int	swap;
+	int	i;
+	int	b;
+
+	i = 0;
+	b = i + 1;
+	swap = taba[0];
+	while (taba[b])
+	{
+		taba[i] = taba[b];
+		i++;
+		b++;
+	}
+	taba[b - 1] = swap;
+	ft_putstr_fd("ra\n", 1);
+}
+
+void	rb(int *tabb)
+{
+	int	swap;
+	int	i;
+	int	b;
+
+	i = 0;
+	b = i + 1;
+	swap = tabb[0];
+	while (tabb[b])
+	{
+		tabb[i] = tabb[b];
+		i++;
+		b++;
+	}
+	tabb[b - 1] = swap;
+	ft_putstr_fd("rb\n", 1);
+}
