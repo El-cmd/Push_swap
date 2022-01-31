@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   operation_ss.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vloth <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 11:48:14 by vloth             #+#    #+#             */
-/*   Updated: 2021/06/02 11:55:50 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/31 04:44:16 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/31 04:56:55 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-int	ft_isalnum(int c)
+void	rrr(t_list la, t_list lb)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	else
-		return (0);
+	t_node	*tmp;
+
+	if (is_empty_list(la) == 0)
+		reverse_rotate(la, tmp);
+	if (is_empty_list(lb) == 0)
+		reverse_rotate(lb);
+	ft_putstr("rrr\n", 1);
 }
+

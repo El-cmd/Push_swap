@@ -5,80 +5,79 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 04:05:13 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/25 15:45:29 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/30 18:03:07 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/31 04:43:02 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sa(int *tab)
+void	sa(t_list l)
 {
-	int	swap;
+	int		swap;
+	t_node	*tmp;
 
-	swap = tab[0];
-	tab[0] = tab[1];
-	tab[1] = swap;
+	if (is_empty_list(l))
+		return ;
+	tmp = l->begin;
+	swap = tmp->value;
+	tmp->value = tmp->next->value;
+	tmp->next->value = swap;
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(int *tab)
+void	sb(t_list l)
 {
-	int	swap;
+	int		swap;
+	t_node	*tmp;
 
-	swap = tab[0];
-	tab[0] = tab[1];
-	tab[1] = swap;
+	if (is_empty_list(l))
+		return ;
+	tmp = l->begin;
+	swap = tmp->value;
+	tmp->value = tmp->next->value;
+	tmp->next->value = swap;
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(int *taba, int *tabb)
+void	ss(t_list la, t_list lb)
 {
-	int	swap;
+	int		swap;
+	t_node	*tmp;
 
-	swap = taba[0];
-	taba[0] = taba[1];
-	taba[1] = swap;
-	swap = tabb[0];
-	tabb[0] = tabb[1];
-	tabb[1] = swap;
+	if (is_empty_list(la) == 0)
+	{
+		tmp = la->begin;
+		swap = tmp->value;
+		tmp->value = tmp->next->value;
+		tmp->next->value = swap;
+	}
+	if (is_empty_list(lb) == 0)
+	{
+		tmp = lb->begin;
+		swap = tmp->value;
+		tmp->value = tmp->next->value;
+		tmp->next->value = swap;
+	}
 	ft_putstr_fd("ss\n", 1);
 }
 
-void	ra(int *taba)
+void	ra(t_list l)
 {
-	int	swap;
-	int	i;
-	int	b;
+	t_node	*tmp;
 
-	i = 0;
-	b = i + 1;
-	swap = taba[0];
-	while (taba[b])
-	{
-		taba[i] = taba[b];
-		i++;
-		b++;
-	}
-	taba[b - 1] = swap;
+	if (is_empty_list(l))
+		return ;
+	rotate(l, tmp);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rb(int *tabb)
+void	rb(t_list l)
 {
-	int	swap;
-	int	i;
-	int	b;
+	t_node	*tmp;
 
-	i = 0;
-	b = i + 1;
-	swap = tabb[0];
-	while (tabb[b])
-	{
-		tabb[i] = tabb[b];
-		i++;
-		b++;
-	}
-	tabb[b - 1] = swap;
+	if (is_empty_list(l))
+		return ;
+	rotate(l, tmp);
 	ft_putstr_fd("rb\n", 1);
 }

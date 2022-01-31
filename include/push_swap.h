@@ -5,43 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 22:54:37 by vlothlinux        #+#    #+#             */
-/*   Updated: 2022/01/25 16:15:15 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/31 04:36:29 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
 
-typedef struct ps_datas
+// def de maillon liste
+typedef struct t_node
 {
-	int	nb_total;
-	int	*stacka;
-	int	*stackb;
-}	t_datas;
+	int				value;
+	struct t_node	*back;
+	struct t_node	*next;
+}t_node;
 
-typedef struct ps_all
+// def de double liste
+typedef struct t_list
 {
-	t_datas	datas[1];
-}	t_all;
+	int				length;
+	struct t_node	*begin;
+	struct t_node	*end;
+}*t_list;
 
+// Proto
+
+// push_swap begin
+t_list	init_stacka(char **av, t_list l);
+
+// operation
+void	rotate(t_list l, t_node *tmp);
+void	reverse_rotate(t_list l, t_node *tmp);
+void	sa(t_list l);
+void	sb(t_list l);
+void	ss(t_list la, t_list lb);
+void	ra(t_list l);
+void	rb(t_list l);
+void	rr(t_list la, t_list lb);
+void	rra(t_list l);
+void	rrb(t_list l);
+void	rrr(t_list la, t_list lb);
+
+// gestion dlist
+t_list	new_dlist(void);
+int		is_empty_list(t_list l);
+int		list_length(t_list l);
+int		first_list(t_list l);
+int		last_list(t_list l);
+t_list	push_back_list(t_list l, int x);
+t_list	push_front_list(t_list l, int x);
+void	print_list(t_list l);
+
+// utilitaire
 int		ft_atoi(const char *nptr);
-void	init_stack(char **av, int ac, t_datas *datas);
-size_t	ft_strlen(const char *s);
-size_t	ft_strlen_int(int *tab);
+size_t	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
-void	sa(int *tab);
-void	sb(int *tab);
-void	ss(int *taba, int *tabb);
-void	ra(int *taba);
-void	rb(int *tabb);
-void	rr(int *taba, int *tabb);
-void	rra(int *taba);
-void	rrb(int *tabb);
-void	rrr(int *taba, int *tabb);
 
 #endif

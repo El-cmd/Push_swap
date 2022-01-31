@@ -1,30 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 18:27:46 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 04:48:17 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/26 19:05:08 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/28 20:26:15 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
-int	main(int ac, char **av)
+t_list	new_dlist(void)
 {
-	t_list	stacka;
-	t_list	stackb = NULL;
+	return (NULL);
+}
 
-	stacka = init_stacka(av, stacka);
-	// Pour voir la stack a
-	if (is_empty_list(stacka))
-		printf("liste vide\n");
-	else
-		printf("Elle contient des trucs\n");
-	print_list(stacka);
-	rrr(stacka, stackb);
-	print_list(stacka);
+int	is_empty_list(t_list l)
+{
+	if (l == NULL)
+		return (1);
 	return (0);
+}
+
+int	list_length(t_list l)
+{
+	if (is_empty_list(l))
+		return (0);
+	return (l->length);
+}
+
+int	first_list(t_list l)
+{
+	if (is_empty_list(l))
+		exit(1);
+	return (l->begin->value);
+}
+
+int	last_list(t_list l)
+{
+	if (is_empty_list(l))
+		exit(1);
+	return (l->end->value);
 }

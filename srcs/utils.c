@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vloth <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 16:46:25 by vloth             #+#    #+#             */
-/*   Updated: 2021/06/17 10:33:44 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/27 23:54:27 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/30 18:23:52 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -36,4 +36,25 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (n * j);
+}
+
+size_t	ft_strlen(char *s)
+{
+	unsigned int	size;
+
+	size = 0;
+	while (s[size])
+		size++;
+	return (size);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t	i;
+
+	if (s)
+	{
+		i = ft_strlen(s);
+		write(fd, s, i);
+	}
 }

@@ -5,105 +5,69 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 15:43:15 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/25 16:15:16 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/30 19:58:26 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/31 04:45:39 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	rr(int *taba, int *tabb)
+void	rotate(t_list l, t_node *tmp)
 {
 	int	swap;
-	int	i;
-	int	b;
 
-	i = 0;
-	b = i + 1;
-	swap = taba[0];
-	while (taba[b])
+	tmp = l->begin;
+	swap = tmp->value;
+	while (tmp->next != NULL)
 	{
-		taba[i] = taba[b];
-		i++;
-		b++;
+		tmp->value = tmp->next->value;
+		tmp = tmp->next;
 	}
-	taba[b - 1] = swap;
-	i = 0;
-	b = i + 1;
-	swap = tabb[0];
-	while (tabb[b])
+	tmp->value = swap;
+}
+
+void	reverse_rotate(t_list l, t_node *tmp)
+{
+	int	swap;
+
+	tmp = l->end;
+	swap = tmp->value;
+	while (tmp->back != NULL)
 	{
-		tabb[i] = tabb[b];
-		i++;
-		b++;
+		tmp->value = tmp->back->value;
+		tmp = tmp->back;
 	}
-	tabb[b - 1] = swap;
+	tmp->value = swap;
+}
+
+void	rr(t_list la, t_list lb)
+{
+	t_node	*tmp;
+
+	if (is_empty_list(la) == 0)
+		rotate(la, tmp);
+	if (is_empty_list(lb) == 0)
+		rotate(lb, tmp);
 	ft_putstr_fd("rr\n", 1);
 }
 
-void	rra(int *taba)
+void	rra(t_list l)
 {
-	int	swap;
-	int	i;
-	int	b;
+	t_node	*tmp;
 
-	i = ft_strlen_int(taba) - 1;
-	b = i - 1;
-	swap = taba[i];
-	while (taba[b])
-	{
-		taba[i] = taba[b];
-		i--;
-		b--;
-	}
-	taba[b + 1] = swap;
+	if (is_empty_list(l))
+		return ;
+	reverse_rotate(l, tmp);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(int *tabb)
+void	rrb(t_list l)
 {
-	int	swap;
-	int	i;
-	int	b;
+	t_node	*tmp;
 
-	i = ft_strlen_int(tabb) - 1;
-	b = i - 1;
-	swap = tabb[i];
-	while (tabb[b])
-	{
-		tabb[i] = tabb[b];
-		i--;
-		b--;
-	}
-	tabb[b + 1] = swap;
-	ft_putstr_fd("rrb\n", 1);
+	if (is_empty_list(l))
+		return ;
+	reverse_rotate(l, tmp);
+	ft_putstr_fd("rrb\n");
 }
 
-void	rrr(int *taba, int *tabb)
-{
-	int	swap;
-	int	i;
-	int	b;
-
-	i = ft_strlen_int(taba) - 1;
-	b = i - 1;
-	swap = taba[i];
-	while (taba[b])
-	{
-		taba[i] = taba[b];
-		i--;
-		b--;
-	}
-	taba[b + 1] = swap;
-	i = ft_strlen_int(tabb) - 1;
-	b = i - 1;
-	swap = tabb[i];
-	while (tabb[b])
-	{
-		tabb[i] = tabb[b];
-		i--;
-		b--;
-	}
-	tabb[b + 1] = swap;
-	ft_putstr_fd("rrr\n", 1);
-}

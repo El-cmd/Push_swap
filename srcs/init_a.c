@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   init_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vloth <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 12:05:19 by vloth             #+#    #+#             */
-/*   Updated: 2021/06/02 12:07:36 by vloth            ###   ########.fr       */
+/*   Created: 2022/01/28 20:56:34 by vloth             #+#    #+#             */
+/*   Updated: 2022/01/30 17:57:21 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-int	ft_isprint(int c)
+t_list	init_stacka(char **av, t_list l)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 1;
+	while (av[i])
+	{
+		l = push_back_list(l, ft_atoi(av[i]));
+		i++;
+	}
+	return (l);
 }
