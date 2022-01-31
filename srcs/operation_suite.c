@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:58:26 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 04:45:39 by vloth            ###   ########.fr       */
+/*   Updated: 2022/01/31 05:42:10 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	rrb(t_list l)
 	if (is_empty_list(l))
 		return ;
 	reverse_rotate(l, tmp);
-	ft_putstr_fd("rrb\n");
+	ft_putstr_fd("rrb\n", 1);
 }
 

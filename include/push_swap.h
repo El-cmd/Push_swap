@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 04:36:29 by vloth            ###   ########.fr       */
+/*   Updated: 2022/01/31 05:51:02 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	rr(t_list la, t_list lb);
 void	rra(t_list l);
 void	rrb(t_list l);
 void	rrr(t_list la, t_list lb);
+void	pa(t_list la, t_list lb);
+void	pb(t_list la, t_list lb);
 
 // gestion dlist
 t_list	new_dlist(void);
@@ -60,6 +62,7 @@ int		last_list(t_list l);
 t_list	push_back_list(t_list l, int x);
 t_list	push_front_list(t_list l, int x);
 void	print_list(t_list l);
+void	pop_front_list(t_list l);
 
 // utilitaire
 int		ft_atoi(const char *nptr);

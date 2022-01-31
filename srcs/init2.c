@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 02:15:04 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/29 19:55:53 by vloth            ###   ########.fr       */
+/*   Updated: 2022/01/31 06:32:19 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,26 @@ void	print_list(t_list l)
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
+}
+
+void	pop_front_list(t_list l)
+{
+	t_node	*tmp;
+
+	tmp = l->begin;
+	if (is_empty_list(l))
+		return ;
+	if (l->begin == l->end)
+	{
+		free(l);
+		l = NULL;
+		return ;
+	}
+	l->begin = l->begin->next;
+	l->begin->back = NULL;
+	tmp->next = NULL;
+	tmp->back = NULL;
+	free(tmp);
+	tmp = NULL;
+	l->length--;
 }
