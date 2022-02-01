@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:46 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 06:41:25 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/01 23:44:29 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 int	main(int ac, char **av)
 {
-	t_list	stacka;
-	//t_list	stackb;
+	t_datas	tt;
 
-	stacka = init_stacka(av, stacka);
-	//stackb = new_dlist();
-	// Pour voir la stack a
-	if (is_empty_list(stacka))
-		printf("liste vide\n");
-	else
-		printf("Elle contient des trucs\n");
-	print_list(stacka);
-	ra(stacka);
-	print_list(stacka);
-	//printf("stack b =\n");
-	//print_list(stackb);
+	tt.stacka = new_dlist();
+	init_stacka(av, tt.stacka);
+	tt.stackb = new_dlist();
+	print_list(tt.stacka);
+	pb(tt.stacka, tt.stackb);
+	pa(tt.stacka, tt.stackb);
+	printf("stack a =\n");
+	print_list(tt.stacka);
+	printf("stack b =\n");
+	print_list(tt.stackb);
 	return (0);
 }

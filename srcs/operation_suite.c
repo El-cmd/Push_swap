@@ -6,13 +6,13 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 19:58:26 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 05:42:10 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/01 09:32:20 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	rotate(t_list l, t_node *tmp)
+void	rotate(t_list *l, t_node *tmp)
 {
 	int	swap;
 
@@ -26,7 +26,7 @@ void	rotate(t_list l, t_node *tmp)
 	tmp->value = swap;
 }
 
-void	reverse_rotate(t_list l, t_node *tmp)
+void	reverse_rotate(t_list *l, t_node *tmp)
 {
 	int	swap;
 
@@ -40,7 +40,7 @@ void	reverse_rotate(t_list l, t_node *tmp)
 	tmp->value = swap;
 }
 
-void	rr(t_list la, t_list lb)
+void	rr(t_list *la, t_list *lb)
 {
 	t_node	*tmp;
 
@@ -51,7 +51,7 @@ void	rr(t_list la, t_list lb)
 	ft_putstr_fd("rr\n", 1);
 }
 
-void	rra(t_list l)
+void	rra(t_list *l)
 {
 	t_node	*tmp;
 
@@ -61,7 +61,7 @@ void	rra(t_list l)
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(t_list l)
+void	rrb(t_list *l)
 {
 	t_node	*tmp;
 

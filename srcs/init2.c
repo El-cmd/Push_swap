@@ -6,13 +6,13 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 02:15:04 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 06:32:19 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/01 23:44:57 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_list	push_back_list(t_list l, int x)
+void	push_back_list(t_list *l, int x)
 {
 	t_node	*element;
 
@@ -20,11 +20,10 @@ t_list	push_back_list(t_list l, int x)
 	if (!element)
 		exit(1);
 	element->value = x;
-	if (is_empty_list(l))
+	element->next = NULL;
+	element->back = NULL;
+	if (l->length == 0)
 	{
-		l = malloc(sizeof(*l));
-		if (!l)
-			exit(1);
 		l->length = 0;
 		l->begin = element;
 		l->end = element;
@@ -36,10 +35,9 @@ t_list	push_back_list(t_list l, int x)
 		l->end = element;
 	}
 	l->length++;
-	return (l);
 }
 
-t_list	push_front_list(t_list l, int x)
+void	push_front_list(t_list *l, int x)
 {
 	t_node	*element;
 
@@ -47,12 +45,8 @@ t_list	push_front_list(t_list l, int x)
 	if (!element)
 		exit(1);
 	element->value = x;
-	if (is_empty_list(l))
+	if (l->length == 0)
 	{
-		l = malloc(sizeof(*l));
-		if (!l)
-			exit(1);
-		l->length = 0;
 		l->begin = element;
 		l->end = element;
 	}
@@ -63,15 +57,22 @@ t_list	push_front_list(t_list l, int x)
 		l->begin = element;
 	}
 	l->length++;
-	return (l);
 }
 
-void	print_list(t_list l)
+void	print_list(t_list *l)
 {
 	t_node	*tmp;
 
+	//if (!tmp)
+	//{
+	//	exit (1);
+	//}
 	if (is_empty_list(l))
+	{
+		free(tmp);
+		tmp = NULL;
 		return ;
+	}
 	tmp = l->begin;
 	while (tmp)
 	{
@@ -80,15 +81,17 @@ void	print_list(t_list l)
 	}
 }
 
-void	pop_front_list(t_list l)
+void	pop_front_list(t_list *l)
 {
 	t_node	*tmp;
 
-	tmp = l->begin;
 	if (is_empty_list(l))
 		return ;
+	tmp = l->begin;
 	if (l->begin == l->end)
 	{
+		free(tmp);
+		tmp = NULL;
 		free(l);
 		l = NULL;
 		return ;

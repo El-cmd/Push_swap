@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/31 05:51:02 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/01 11:48:22 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,38 +31,44 @@ typedef struct t_list
 	int				length;
 	struct t_node	*begin;
 	struct t_node	*end;
-}*t_list;
+}t_list;
+
+typedef struct t_datas
+{
+	t_list	*stacka;
+	t_list	*stackb;
+}t_datas;
 
 // Proto
 
 // push_swap begin
-t_list	init_stacka(char **av, t_list l);
+void	init_stacka(char **av, t_list *l);
 
 // operation
-void	rotate(t_list l, t_node *tmp);
-void	reverse_rotate(t_list l, t_node *tmp);
-void	sa(t_list l);
-void	sb(t_list l);
-void	ss(t_list la, t_list lb);
-void	ra(t_list l);
-void	rb(t_list l);
-void	rr(t_list la, t_list lb);
-void	rra(t_list l);
-void	rrb(t_list l);
-void	rrr(t_list la, t_list lb);
-void	pa(t_list la, t_list lb);
-void	pb(t_list la, t_list lb);
+void	rotate(t_list *l, t_node *tmp);
+void	reverse_rotate(t_list *l, t_node *tmp);
+void	sa(t_list *l);
+void	sb(t_list *l);
+void	ss(t_list *la, t_list *lb);
+void	ra(t_list *l);
+void	rb(t_list *l);
+void	rr(t_list *la, t_list *lb);
+void	rra(t_list *l);
+void	rrb(t_list *l);
+void	rrr(t_list *la, t_list *lb);
+void	pa(t_list *la, t_list *lb);
+void	pb(t_list *la, t_list *lb);
 
 // gestion dlist
-t_list	new_dlist(void);
-int		is_empty_list(t_list l);
-int		list_length(t_list l);
-int		first_list(t_list l);
-int		last_list(t_list l);
-t_list	push_back_list(t_list l, int x);
-t_list	push_front_list(t_list l, int x);
-void	print_list(t_list l);
-void	pop_front_list(t_list l);
+t_list	*new_dlist(void);
+int		is_empty_list(t_list *l);
+int		list_length(t_list *l);
+int		first_list(t_list *l);
+int		last_list(t_list *l);
+void	push_back_list(t_list *l, int x);
+void	push_front_list(t_list *l, int x);
+void	print_list(t_list *l);
+void	pop_front_list(t_list *l);
 
 // utilitaire
 int		ft_atoi(const char *nptr);
