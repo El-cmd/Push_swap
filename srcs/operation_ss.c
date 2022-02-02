@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 04:44:16 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/01 12:07:18 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/02 19:20:50 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ void	pa(t_list *la, t_list *lb)
 
 	if (is_empty_list(lb))
 		return ;
-	element = lb->begin;
 	if (is_empty_list(lb) == 0)
 	{
-		push_front_list(la, element->value);
-		pop_front_list(lb);
+		element = pop_front_list(lb);
+		push_front_list(la, element);
 	}
 	ft_putstr_fd("pa\n", 1);
 }
@@ -44,11 +43,10 @@ void	pb(t_list *la, t_list *lb)
 
 	if (is_empty_list(la))
 		return ;
-	element = la->begin;
 	if (is_empty_list(la) == 0)
 	{
-		push_front_list(lb, element->value);
-		pop_front_list(la);
+		element = pop_front_list(la);
+		push_front_list(lb, element);
 	}
 	ft_putstr_fd("pb\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/01 11:48:22 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/02 19:15:29 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct t_datas
 
 // push_swap begin
 void	init_stacka(char **av, t_list *l);
+void	push_back_list_for_a(t_list *l, int x);
 
 // operation
 void	rotate(t_list *l, t_node *tmp);
@@ -65,10 +66,10 @@ int		is_empty_list(t_list *l);
 int		list_length(t_list *l);
 int		first_list(t_list *l);
 int		last_list(t_list *l);
-void	push_back_list(t_list *l, int x);
-void	push_front_list(t_list *l, int x);
+void	push_back_list(t_list *l, t_node *element);
+void	push_front_list(t_list *l, t_node *element);
 void	print_list(t_list *l);
-void	pop_front_list(t_list *l);
+t_node	*pop_front_list(t_list *l);
 
 // utilitaire
 int		ft_atoi(const char *nptr);
