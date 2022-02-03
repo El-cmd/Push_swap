@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 02:15:04 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/02 19:15:00 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/02 19:43:02 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	push_back_list(t_list *l, t_node *element)
 		l->end->next = element;
 		l->end = element;
 	}
+	l->length++;
 }
 
 void	push_front_list(t_list *l, t_node *element)
@@ -37,7 +38,6 @@ void	push_front_list(t_list *l, t_node *element)
 	{
 		l->begin = element;
 		l->end = element;
-		l->length++;
 		element->back = NULL;
 		element->next = NULL;
 	}
@@ -48,6 +48,7 @@ void	push_front_list(t_list *l, t_node *element)
 		l->begin->back = element;
 		l->begin = element;
 	}
+	l->length++;
 }
 
 void	print_list(t_list *l)

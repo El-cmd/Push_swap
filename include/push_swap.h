@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/02 19:15:29 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/03 01:28:51 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,12 @@ t_node	*pop_front_list(t_list *l);
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
+
+// Sort
+void	threesort(t_list *la, int a, int b, int c);
+void	threesort_exept(t_list *la, int a, int b, int c);
+void	threesort_gene(t_list *la);
+void	fivesort(t_list *la, t_list *lb);
+void	foursort(t_list *la, t_list *lb, t_node *tmp);
 
 #endif
