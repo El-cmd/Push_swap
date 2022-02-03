@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/03 01:28:51 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/03 15:11:25 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct t_datas
 }t_datas;
 
 // Proto
-
 // push_swap begin
 void	init_stacka(char **av, t_list *l);
 void	push_back_list_for_a(t_list *l, int x);
@@ -76,11 +75,13 @@ int		ft_atoi(const char *nptr);
 size_t	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
 
-// Sort
+// Sort 3 a 5
 void	threesort(t_list *la, int a, int b, int c);
 void	threesort_exept(t_list *la, int a, int b, int c);
 void	threesort_gene(t_list *la);
 void	fivesort(t_list *la, t_list *lb);
 void	foursort(t_list *la, t_list *lb, t_node *tmp);
+void	pb_the_smallest(t_list *la, t_list *lb, t_node *tmp);
+int		who_is_smallest(t_list *la, t_node *tmp);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:57:56 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/02 23:28:14 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/03 15:12:02 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,33 @@ void	threesort_gene(t_list *la)
 	else
 		threesort_exept(la, a, b, c);
 	return ;
+}
+
+void	pb_the_smallest(t_list *la, t_list *lb, t_node *tmp)
+{
+	tmp = la->begin;
+	if (who_is_smallest(la, tmp) == tmp->value)
+		pb(la, lb);
+	else if (who_is_smallest(la, tmp) == tmp->next->value)
+	{
+		sa(la);
+		pb(la, lb);
+	}
+	else if (who_is_smallest(la, tmp) == tmp->next->next->value)
+	{
+		ra(la);
+		ra(la);
+		pb(la, lb);
+	}
+	else if (who_is_smallest(la, tmp) == la->end->back->value)
+	{
+		rra(la);
+		rra(la);
+		pb(la, lb);
+	}
+	else if (who_is_smallest(la, tmp) == la->end->value)
+	{
+		rra(la);
+		pb(la, lb);
+	}
 }
