@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/03 15:11:25 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/07 21:03:30 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,9 @@ void	threesort_gene(t_list *la);
 void	fivesort(t_list *la, t_list *lb);
 void	foursort(t_list *la, t_list *lb, t_node *tmp);
 void	pb_the_smallest(t_list *la, t_list *lb, t_node *tmp);
-int		who_is_smallest(t_list *la, t_node *tmp);
+int		who_is_smallest(t_node *tmp);
+
+// Sort big datas
+void	sort_a_and_b(t_list *la, t_list *lb);
 
 #endif

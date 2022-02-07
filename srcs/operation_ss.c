@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 04:44:16 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/02 19:20:50 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/07 20:11:02 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	rrr(t_list *la, t_list *lb)
 {
 	t_node	*tmp;
 
+	tmp = NULL;
 	if (is_empty_list(la) == 0)
 		reverse_rotate(la, tmp);
 	if (is_empty_list(lb) == 0)

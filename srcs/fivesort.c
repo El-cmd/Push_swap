@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 00:03:30 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/03 15:11:38 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/07 19:22:40 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	foursort(t_list *la, t_list *lb, t_node *tmp)
 	return ;
 }
 
-int	who_is_smallest(t_list *la, t_node *tmp)
+int	who_is_smallest(t_node *tmp)
 {
 	int	a;
 

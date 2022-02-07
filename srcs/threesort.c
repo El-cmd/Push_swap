@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:57:56 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/03 15:12:02 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/07 20:16:18 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,26 +81,26 @@ void	threesort_gene(t_list *la)
 void	pb_the_smallest(t_list *la, t_list *lb, t_node *tmp)
 {
 	tmp = la->begin;
-	if (who_is_smallest(la, tmp) == tmp->value)
+	if (who_is_smallest(tmp) == tmp->value)
 		pb(la, lb);
-	else if (who_is_smallest(la, tmp) == tmp->next->value)
+	else if (who_is_smallest(tmp) == tmp->next->value)
 	{
 		sa(la);
 		pb(la, lb);
 	}
-	else if (who_is_smallest(la, tmp) == tmp->next->next->value)
+	else if (who_is_smallest(tmp) == tmp->next->next->value)
 	{
 		ra(la);
 		ra(la);
 		pb(la, lb);
 	}
-	else if (who_is_smallest(la, tmp) == la->end->back->value)
+	else if (who_is_smallest(tmp) == la->end->back->value)
 	{
 		rra(la);
 		rra(la);
 		pb(la, lb);
 	}
-	else if (who_is_smallest(la, tmp) == la->end->value)
+	else if (who_is_smallest(tmp) == la->end->value)
 	{
 		rra(la);
 		pb(la, lb);

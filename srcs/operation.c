@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 18:03:07 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/01 09:30:34 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/07 21:23:17 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	ss(t_list *la, t_list *lb)
 		tmp->value = tmp->next->value;
 		tmp->next->value = swap;
 	}
+	else
+		return ;
 	ft_putstr_fd("ss\n", 1);
 }
 
@@ -66,8 +68,9 @@ void	ra(t_list *l)
 {
 	t_node	*tmp;
 
+	tmp = NULL;
 	if (is_empty_list(l))
-		return ;
+		exit(1);
 	rotate(l, tmp);
 	ft_putstr_fd("ra\n", 1);
 }
@@ -76,8 +79,9 @@ void	rb(t_list *l)
 {
 	t_node	*tmp;
 
+	tmp = NULL;
 	if (is_empty_list(l))
-		return ;
+		exit(1);
 	rotate(l, tmp);
 	ft_putstr_fd("rb\n", 1);
 }
