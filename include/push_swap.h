@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/07 21:03:30 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/09 04:55:08 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,8 @@ int		who_is_smallest(t_node *tmp);
 
 // Sort big datas
 void	sort_a_and_b(t_list *la, t_list *lb);
+t_node	*smallest_sb(t_list *lb);
+t_node	*biggest_sb(t_list *lb);
+int		position_element(t_list *l, t_node *elmt);
 
 #endif
