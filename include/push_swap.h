@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/09 04:55:08 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/10 11:44:03 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,9 @@ void	sort_a_and_b(t_list *la, t_list *lb);
 t_node	*smallest_sb(t_list *lb);
 t_node	*biggest_sb(t_list *lb);
 int		position_element(t_list *l, t_node *elmt);
+int		best_move(t_list *l);
+void	sort_smallest(t_list *lb);
+void	sort_biggest(t_list *lb);
+void	real_sort_hundred(t_list *la, t_list *lb);
 
 #endif

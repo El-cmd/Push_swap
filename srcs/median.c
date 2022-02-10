@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 20:43:10 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/09 04:54:36 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/10 12:09:23 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_median(t_list *l)
 		tmp = tmp->next;
 	}
 	a = a / l->length;
-	printf("a = %d\n", a);
+	printf("la moyenne est de = %d\n", a);
 	return (a);
 }
 
@@ -42,7 +42,7 @@ void	sort_a_and_b(t_list *la, t_list *lb)
 	a = get_median(la);
 	while (i <= lengtha)
 	{
-		if (tmp->value > a && la->length > 1)
+		if (tmp->value >= a && la->length > 1)
 			ra(la);
 		else if (tmp->value < a)
 			pb(la, lb);

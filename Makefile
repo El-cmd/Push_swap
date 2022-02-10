@@ -11,6 +11,8 @@ SRC		= push_swap.c \
 		  srcs/operation.c \
 		  srcs/threesort.c \
 		  srcs/median.c	\
+		  srcs/sort_big_data.c \
+		  srcs/sort_big_data_suite.c \
 		  srcs/utils.c 
 
 OBJ		= $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:27:46 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/09 06:15:57 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/10 12:04:33 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	main(int ac, char **av)
 	print_list(tt.stacka);
 	printf("stack b: \n");
 	print_list(tt.stackb);
-	printf("Taille de la stack b = %d\n", tt.stackb->length);
-	printf("le plus petit de b est : %d\n", smallest_sb(tt.stackb)->value);
-	printf("le plus grand de b est : %d\n", biggest_sb(tt.stackb)->value);
-	printf("la position du plus petit est : %d\n", position_element(tt.stackb, smallest_sb(tt.stackb)));
-	printf("la position du plus grand est : %d\n", position_element(tt.stackb, biggest_sb(tt.stackb)));
+	real_sort_hundred(tt.stacka, tt.stackb);
+	printf("stack a apres le tri: \n");
+	print_list(tt.stacka);
+	printf("stack b apres le tri: \n");
+	print_list(tt.stackb);
 	return (0);
 }
