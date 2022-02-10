@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 05:50:49 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/10 12:28:26 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/10 13:34:06 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	best_move(t_list *l)
 
 int	begin_or_end(int a, int b)
 {
-	if (a > b / 2)
+	if (a >= b / 2)
 		return (0);
 	else
 		return (1);
