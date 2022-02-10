@@ -6,13 +6,13 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 05:50:49 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/10 13:34:06 by vloth            ###   ########.fr       */
+/*   Updated: 2022/02/10 21:41:37 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	best_index(int a, int b)
+int	best_index(int a, float b)
 {
 	int	i;
 
@@ -38,11 +38,11 @@ int	best_index(int a, int b)
 
 int	best_move(t_list *l)
 {
-	int	a;
-	int	b;
-	int	c;
-	int	i;
-	int	y;
+	int		a;
+	int		b;
+	float	c;
+	int		i;
+	int		y;
 
 	a = position_element(l, smallest_sb(l));
 	b = position_element(l, biggest_sb(l));
@@ -58,6 +58,8 @@ int	begin_or_end(int a, int b)
 {
 	if (a >= b / 2)
 		return (0);
+	//else if (a == (b / 2)) // Je pense qu'il y a un probleme ici 
+	//	return (-1);
 	else
 		return (1);
 }
@@ -92,7 +94,7 @@ void	sort_biggest(t_list *lb)
 	tmp = lb->begin;
 	if (begin_or_end(position_element(lb, biggest_sb(lb)), lb->length))
 	{
-		while (tmp != smallest_sb(lb))
+		while (tmp != biggest_sb(lb))
 		{
 			rb(lb);
 			tmp = lb->begin;
