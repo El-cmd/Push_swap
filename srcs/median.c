@@ -25,7 +25,6 @@ int	get_median(t_list *l)
 		tmp = tmp->next;
 	}
 	a = a / l->length;
-	printf("la moyenne est de = %d\n", a);
 	return (a);
 }
 

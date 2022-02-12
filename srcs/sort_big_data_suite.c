@@ -12,6 +12,30 @@
 
 #include "../include/push_swap.h"
 
+void	now_bigger_a(t_list *la, t_list *lb)
+{
+	int	a;
+	t_node	*tmp;
+
+	tmp = la->begin;
+	a = get_median(la);
+	while (tmp->value >= a)
+	{
+		pb(la, lb);
+		tmp = la->begin;
+	}
+}
+
+void	sort_hundred(t_list *la, t_list *lb)
+{
+	while (lb->length > 0)
+	{
+		sort_smallest(lb);
+		pa(la, lb);
+		ra(la);
+	}
+}
+
 void	real_sort_hundred(t_list *la, t_list *lb)
 {
 	int	i;
@@ -39,4 +63,6 @@ void	real_sort_hundred(t_list *la, t_list *lb)
 		ra(la);
 		y++;
 	}
+	now_bigger_a(la, lb);
+	sort_hundred(la, lb);
 }

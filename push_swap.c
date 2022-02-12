@@ -19,19 +19,17 @@ int	main(int ac, char **av)
 	tt.stacka = new_dlist();
 	init_stacka(av, tt.stacka);
 	tt.stackb = new_dlist();
+	if (ac == 2 || ac == 1)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit(1);
+	}
 	if (ac == 4)
 		threesort_gene(tt.stacka);
 	if (ac >= 5 && ac <= 6)
 		fivesort(tt.stacka, tt.stackb);
+	if (ac >= 7)
 	sort_a_and_b(tt.stacka, tt.stackb);
-	printf("stack a: \n");
-	print_list(tt.stacka);
-	printf("stack b: \n");
-	print_list(tt.stackb);
 	real_sort_hundred(tt.stacka, tt.stackb);
-	printf("stack a apres le tri: \n");
-	print_list(tt.stacka);
-	printf("stack b apres le tri: \n");
-	print_list(tt.stackb);
-	return (0);
+	exit(0);
 }

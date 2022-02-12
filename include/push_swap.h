@@ -74,6 +74,7 @@ t_node	*pop_front_list(t_list *l);
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
+int		get_median(t_list *l);
 
 // Sort 3 a 5
 void	threesort(t_list *la, int a, int b, int c);
