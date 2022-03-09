@@ -1,5 +1,6 @@
 CC		=  gcc
-CFLAGS	= -Wall -Werror -Wextra -c 
+CFLAGS	= -Wall -Werror -Wextra -c
+
 NAME	= push_swap
 SRC		= push_swap.c \
 		  srcs/fivesort.c \
@@ -13,22 +14,42 @@ SRC		= push_swap.c \
 		  srcs/median.c	\
 		  srcs/sort_big_data.c \
 		  srcs/sort_big_data_suite.c \
-		  srcs/utils.c 
+		  srcs/utils.c
+
+NAME_BONUS = checker
+SRC_BONUS = SRC_checker/checker.c \
+			SRC_checker/src/gestion_dl.c \
+			SRC_checker/src/gestion_dls.c \
+			SRC_checker/src/op.c \
+			SRC_checker/src/op_s.c \
+			SRC_checker/src/op_ss.c \
+			SRC_checker/src/util.c \
+			SRC_checker/src/get-nl/get_next_line.c \
+			SRC_checker/src/get-nl/get_next_line_utils.c \
+			SRC_checker/src/init_stack.c \
+			SRC_checker/src/do_op.c
 
 OBJ		= $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) $(NAME_BONUS)
+all_bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJ)
 		$(CC) $(OBJ) -o $(NAME)
 
+$(NAME_BONUS): $(OBJ_BONUS)
+			$(CC) $(OBJ_BONUS) -o $(NAME_BONUS)	
+
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ $< -g
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=10 -o $@ $< -g
 
 clean:
 	rm -rf $(OBJ)
+	rm -rf $(OBJ_BONUS)
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf $(NAME_BONUS)
 
-re: fclean all
+re: fclean all all_bonus
