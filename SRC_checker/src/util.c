@@ -6,17 +6,29 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:57:55 by vloth             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/03/18 23:32:19 by vloth            ###   ########.fr       */
+=======
+/*   Updated: 2022/03/07 02:54:58 by vloth            ###   ########.fr       */
+>>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
+<<<<<<< HEAD
 int64_t	ft_atoi(const char *nptr)
 {
 	int64_t	i;
 	int64_t	n;
 	int64_t	j;
+=======
+int	ft_atoi(const char *nptr)
+{
+	int	i;
+	int	n;
+	int	j;
+>>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
 
 	j = 0;
 	i = 0;

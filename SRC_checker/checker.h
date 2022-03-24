@@ -6,7 +6,11 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:30:51 by vloth             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/03/19 14:32:55 by vloth            ###   ########.fr       */
+=======
+/*   Updated: 2022/03/09 16:58:28 by vloth            ###   ########.fr       */
+>>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +83,27 @@ void	rrr(t_list *la, t_list *lb);
 void	pa(t_list *la, t_list *lb);
 void	pb(t_list *la, t_list *lb);
 
+<<<<<<< HEAD
 // utilitaire
 int64_t	ft_atoi(const char *nptr);
+=======
+
+// utilitaire
+int		ft_atoi(const char *nptr);
+>>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
 size_t	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
 
 // checker
 
 void	do_op(t_list *la, t_list *lb);
+<<<<<<< HEAD
 void	its_sorted(t_list *la, t_list *lb);
 int		is_number(char *av);
 int		numbers(int ac, char **av);
 void	free_list(t_list *la);
 void	ft_duplicate(t_list *la);
+=======
+>>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
 
 #endif
