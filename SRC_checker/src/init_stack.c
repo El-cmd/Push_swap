@@ -6,11 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 02:11:24 by vloth             #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/03/19 14:02:02 by vloth            ###   ########.fr       */
-=======
-/*   Updated: 2022/03/07 02:16:07 by vloth            ###   ########.fr       */
->>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
+/*   Updated: 2022/03/24 13:47:56 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +44,6 @@ void	init_stacka(char **av, t_list *l)
 	i = 1;
 	while (av[i])
 	{
-<<<<<<< HEAD
 		if (ft_atoi(av[i]) <= -2147483648 || ft_atoi(av[i]) >= 2147483647 \
 			|| ft_strlen(av[i]) > 11)
 		{
@@ -59,9 +54,3 @@ void	init_stacka(char **av, t_list *l)
 		i++;
 	}
 }
-=======
-		push_back_list_for_a(l, ft_atoi(av[i]));
-		i++;
-	}
-}
->>>>>>> edfa8cfda3018999997f965da160edb564c79cd4
