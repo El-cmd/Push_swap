@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   free_britney.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 16:30:24 by vloth             #+#    #+#             */
-/*   Updated: 2022/03/24 13:29:55 by vloth            ###   ########.fr       */
+/*   Created: 2022/03/24 13:22:16 by vloth             #+#    #+#             */
+/*   Updated: 2022/03/24 13:25:28 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../include/push_swap.h"
 
-int	main(int ac, char **av)
+void	free_list(t_list *la)
 {
-	t_datas	tt;
+	t_node	*tmp;
 
-	if (ac == 0 || ac == 1)
-		return (0);
-	numbers(ac, av);
-	tt.stacka = new_dlist();
-	init_stacka(av, tt.stacka);
-	tt.stackb = new_dlist();
-	ft_duplicate(tt.stacka);
-	do_op(tt.stacka, tt.stackb);
-	its_sorted(tt.stacka, tt.stackb);
-	free_list(tt.stacka);
-	return (0);
+	tmp = la->begin;
+	while (tmp)
+	{
+		tmp = pop_front_list(la);
+		tmp = la->begin;
+	}
 }

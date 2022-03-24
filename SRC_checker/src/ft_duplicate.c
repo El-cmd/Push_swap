@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_duplicate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 16:30:24 by vloth             #+#    #+#             */
-/*   Updated: 2022/03/24 13:29:55 by vloth            ###   ########.fr       */
+/*   Created: 2022/03/19 14:16:03 by vloth             #+#    #+#             */
+/*   Updated: 2022/03/19 16:41:27 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../checker.h"
 
-int	main(int ac, char **av)
+void		ft_duplicate(t_list *la)
 {
-	t_datas	tt;
+	t_node	*tmp;
+	t_node	*tmpp;
 
-	if (ac == 0 || ac == 1)
-		return (0);
-	numbers(ac, av);
-	tt.stacka = new_dlist();
-	init_stacka(av, tt.stacka);
-	tt.stackb = new_dlist();
-	ft_duplicate(tt.stacka);
-	do_op(tt.stacka, tt.stackb);
-	its_sorted(tt.stacka, tt.stackb);
-	free_list(tt.stacka);
-	return (0);
+	tmp = la->begin;
+	tmpp = la->begin->next;
+	while (tmp != tmpp && tmp && tmpp)
+	{
+		if (tmp->value == tmpp->value)
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		if (tmpp == la->end)
+		{
+			tmp = tmp->next;
+			tmpp = tmp->next;
+		}
+		else
+			tmpp = tmpp->next;
+	}
 }

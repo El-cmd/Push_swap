@@ -6,17 +6,17 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 23:54:27 by vloth             #+#    #+#             */
-/*   Updated: 2022/01/30 18:23:52 by vloth            ###   ########.fr       */
+/*   Updated: 2022/03/24 04:12:59 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_atoi(const char *nptr)
+int64_t	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	n;
-	int	j;
+	int64_t	i;
+	int64_t	n;
+	int64_t	j;
 
 	j = 0;
 	i = 0;
@@ -57,4 +57,13 @@ void	ft_putstr_fd(char *s, int fd)
 		i = ft_strlen(s);
 		write(fd, s, i);
 	}
+}
+
+void	ft_la_dualite(t_list *la)
+{
+	t_node *tmp;
+
+	tmp = la->begin;
+	if (tmp->value > tmp->next->value)
+		sa(la);	
 }

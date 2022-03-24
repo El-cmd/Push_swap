@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 20:56:34 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/02 19:20:00 by vloth            ###   ########.fr       */
+/*   Updated: 2022/03/19 14:02:53 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ void	init_stacka(char **av, t_list *l)
 	i = 1;
 	while (av[i])
 	{
+		if (ft_atoi(av[i]) <= -2147483648 || \
+			ft_atoi(av[i]) >= 2147483647 || ft_strlen(av[i]) > 11)
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
 		push_back_list_for_a(l, ft_atoi(av[i]));
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:39:15 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/10 13:27:23 by vloth            ###   ########.fr       */
+/*   Updated: 2022/03/22 21:01:49 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	now_bigger_a(t_list *la, t_list *lb)
 {
-	int	a;
+	int		a;
 	t_node	*tmp;
 
 	tmp = la->begin;
@@ -38,31 +38,7 @@ void	sort_hundred(t_list *la, t_list *lb)
 
 void	real_sort_hundred(t_list *la, t_list *lb)
 {
-	int	i;
-	int	y;
-
-	y = 0;
-	i = 0;
-	while (lb->length > 0)
-	{
-		if (best_move(lb))
-		{
-			sort_smallest(lb);
-			pa(la, lb);
-			ra(la);
-		}
-		else if (best_move(lb) == 0)
-		{
-			sort_biggest(lb);
-			pa(la, lb);
-			i++;
-		}
-	}
-	while (y < i)
-	{
-		ra(la);
-		y++;
-	}
+	sort_between(la, lb);
 	now_bigger_a(la, lb);
 	sort_hundred(la, lb);
 }

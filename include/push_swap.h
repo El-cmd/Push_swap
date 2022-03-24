@@ -6,7 +6,7 @@
 /*   By: vloth <vloth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:29:22 by vloth             #+#    #+#             */
-/*   Updated: 2022/02/10 11:44:03 by vloth            ###   ########.fr       */
+/*   Updated: 2022/03/24 13:20:26 by vloth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,13 @@ void	print_list(t_list *l);
 t_node	*pop_front_list(t_list *l);
 
 // utilitaire
-int		ft_atoi(const char *nptr);
+int64_t	ft_atoi(const char *nptr);
 size_t	ft_strlen(char *s);
 void	ft_putstr_fd(char *s, int fd);
 int		get_median(t_list *l);
 
 // Sort 3 a 5
+void	ft_la_dualite(t_list *la);
 void	threesort(t_list *la, int a, int b, int c);
 void	threesort_exept(t_list *la, int a, int b, int c);
 void	threesort_gene(t_list *la);
@@ -94,5 +95,23 @@ int		best_move(t_list *l);
 void	sort_smallest(t_list *lb);
 void	sort_biggest(t_list *lb);
 void	real_sort_hundred(t_list *la, t_list *lb);
+void	its_sorted(t_list *la, t_list *lb);
+int		is_number(char *av);
+int		numbers(int ac, char **av);
+void	ft_duplicate(t_list *la);
+void	sort_between(t_list *la, t_list *lb);
+
+// Sort more than 100
+
+int		smallest_median(t_list *la);
+int		biggest_median(t_list *la);
+int		the_smallest(t_list *la);
+int		the_biggest(t_list *la);
+void	first_quarter(t_list *la, t_list *lb);
+void	second_quarter(t_list *la, t_list *lb);
+void	third_quarter(t_list *la, t_list *lb);
+void	fourst_quarter(t_list *la, t_list *lb);
+void	sort_five_hundred(t_list *la, t_list *lb);
+void	free_list(t_list *la);
 
 #endif
